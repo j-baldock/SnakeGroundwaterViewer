@@ -1,0 +1,53 @@
+# Introduction
+
+This book provides tools to visualize spatial data describing groundwater availability in rivers and streams of the upper Snake River watershed, Wyoming, USA. This book supports the publication "Groundwater structures fish growth and production across a riverscape", published in Freshwater Biology.
+
+**View the publication here:** 
+
+**Access the GitHub repo (and spatial data files) here:** <https://github.com/j-baldock/SnakeGroundwaterViewer>
+
+Project team: Jeff Baldock, Robert Al-Chokhachy, Annika Walters
+
+
+## Motivation
+
+In riverine ecosystems, spatiotemporal variation in water temperature and discharge result from complex interactions among the physical and biological habitat template, prevailing climate, and water source (e.g., rain, snow, or groundwater; Poff et al. 1997, Webb et al. 2008). Critically, groundwater discharge to streams stabilizes water temperature and flow regimes: increasing water availability during dry periods and buffering against high temperatures during summer and low temperatures overwinter (Ward 1985, Poff et al. 1997). Variation in habitat conditions associated with groundwater has implications for the growth and production of riverine taxa, such as cold-water fishes. In addition, groundwater-fed habitats are expected to serve as climate refuges for cold-water fish as groundwater input buffers against stressful water temperatures and hydrologic variability (Power et al. 1999, Larsen and Woelfle-Erskine 2018). Accordingly, calls for identification and protection of groundwater-based climate refuges require data products that map groundwater availability at spatial scales relevant to habitat and fisheries management: fine resolutions and broad extents (i.e., riverscapes; Mejia et al. 2023). 
+
+Riverscape (i.e., spatially continuous) approaches to understanding groundwater availability in streams has been particularly challenging. Because groundwater inflow decouples stream and air temperature regimes (Ward 1985), temperature sensitivity is often used as a proxy for groundwater availability (e.g., O’Driscoll and DeWalle 2006). However, using temperature sensitivity alone to infer groundwater contributions to streams is not recommended at broad spatial extents given the many landscape factors that influence sensitivity (Lisi et al. 2015). Therefore, metrics of groundwater that are independent of stream temperature are needed to inform aquatic ecosystem research (Letcher et al. 2016, Mejia et al. 2023). To date, independent measures of groundwater availability are limited to the base-flow index provided in the National Hydrography Dataset (Schwarz et al. 2023). Base-flow is calculated from U.S. Geological Survey streamgages and then interpolated on a 1 km grid for ungaged stream reaches (Wolock 2003). Base-flow may therefore misrepresent groundwater availability in small, headwater streams as these systems are underrepresented in existing gaging networks (DeWeber et al. 2014). Furthermore, the coarse spatial resolution for interpolating base-flow likely overlooks important spatial heterogeneity in geology and other landscape features that promote groundwater discharge at much finer spatial scales (Jackson et al. 2024). 
+
+In the accompanying study, we derive a high resolution, spatially extensive index of groundwater availability in streams and rivers of the upper Snake River watershed. We also show how this index can be used to model stream temperature and understand fish recruitment across scales. Our approach is relatively simple, requiring easy-to-obtain field observations and publicly available spatial data, making it tractable to apply to catchments where an understanding of groundwater availability is needed to guide climate adaptation planning (Mejia et al 2023).
+
+
+## References
+
+* DeWeber, J. T., Y. Tsang, D. M. Krueger, J. B. Whittier, T. Wagner, D. M. Infante, and G. Whelan. 2014. Importance of understanding landscape biases in USGS gage locations: implications and solutions for managers. Fisheries 39:155-163.
+* Jackson, K. E., E. M. Moore, A. M. Helton, A. B. Haynes, J. R. Barclay, and M. A. Briggs. 2024. Exploring landscape and geologic controls on spatial patterning of streambank groundwater discharge in a mixed land use watershed. Hydrological Processes 38:1–17.
+* Larsen, L. G., and C. Woelfle-Erskine. 2018. Groundwater Is Key to Salmonid Persistence and Recruitment in Intermittent Mediterranean-Climate Streams. Water Resources Research 54:8909–8930.
+* Letcher, B. H., D. J. Hocking, K. O’Neil, A. R. Whiteley, K. H. Nislow, and M. J. O’Donnell. 2016. A hierarchical model of daily stream temperature using air-water temperature synchronization, autocorrelation, and time lags. PeerJ 2016:1–26.
+* Lisi, P. J., D. E. Schindler, T. J. Cline, M. D. Scheuerell, and P. B. Walsh. 2015. Watershed geomorphology and snowmelt control stream thermal sensitivity to air temperature. Geophysical Research Letters 42:3380–3388.
+* Mejia, F. H., V. Ouellet, M. A. Briggs, S. M. Carlson, R. Casas-Mulet, M. Chapman, M. J. Collins, S. J. Dugdale, J. L. Ebersole, D. M. Frechette, A. H. Fullerton, A. Carole-Gillis, Z. C. Johnson, C. Kelleher, B. L. Kurylyk, R. Lave, B. H. Letcher, K. M. Myrvold, T.-L. Nadeau, H. Neville, H. Piégay, K. A. Smith, D. Tonolla, and C. E. Torgersen. 2023. Closing the gap between science and management of water refuges in rivers and streams. Global Change Biology:1–27.
+* O’Driscoll, M. A., and D. R. DeWalle. 2006. Stream-air temperature relations to classify stream-ground water interactions in a karst setting, central Pennsylvania, USA. Journal of Hydrology 329:140–153.
+* Poff, N. L., J. D. Allan, M. B. Bain, J. R. Karr, K. L. Prestegaard, B. D. Richter, R. E. Sparks, and J. C. Stromberg. 1997. The Natural Flow Regime. BioScience 47:769–784.
+* Power, G., R. S. Brown, and J. G. Imhof. 1999. Groundwater and fish - Insights from northern North America. Hydrological Processes 13:401–422.
+* Schwarz, G. E., S. E. Jackson, M. E. Wieczorek, A. J. Sekellick, and L. E. Staub. 2023. Attributes for NHDPlus Version 2.1 Catchments and Modified Routing of Upstream Watersheds for the Conterminous United States: Base Flow Index. U.S. Geological Survey data release, https://doi.org/10.5066/F7765D7V.
+* Ward, J. V. 1985. Thermal characteristics of running waters. Hydrobiologia 125:31–46.
+* Webb, B. W., D. M. Hannah, R. D. Moore, L. E. Brown, and F. Nobilis. 2008. Recent advances in stream and river temperature research. Hydrological Processes 22:902–918.
+* Wolock, D.M. 2003. Base-flow index grid for the conterminous United States. U.S. Geological Survey data release, https://doi.org/10.5066/P9MCTH3J.
+
+------------------------------------------------------------------------
+
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+
+Session Information
+
+</button>
+
+:::: {#collapseOne .accordion-collapse .collapse}
+<div>
+
+```{r}
+sessionInfo()
+```
+
+</div>
+::::
