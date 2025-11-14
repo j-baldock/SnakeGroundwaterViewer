@@ -1,0 +1,42 @@
+---
+title: "View Spring Prevalence"
+format: html
+---
+
+This page displays the spring prevalence for the entire upper Snake River watershed, calculated every 300 meters along the stream network. **The value at each point is the probability that a groundwater spring exists at that location** (more specifically, within the associated 10x10 meter raster cell). These data are used to derive the groundwater index (see next page), which is what we present in the paper. While outside the scope of the current study, individual springs are often the focus of water quality protection efforts and springs can also create patches of cold-water habitat that fish and other organisms use as thermal refuge during warm periods. Thus, these data capture finer-scale heterogeneity in groundwater availability than is captured by the groundwater index, which tends to average over localized hotspots of spring prevalence. 
+
+**Key:** lighter ([orange]{style="color:orange;"}) points indicate locations with low groundwater availability, whereas darker ([black]{style="color:black;"}) points indicate locations with high groundwater availability.
+
+**Note:** We restricted prediction points to those with catchments less than 500 square kilometers as we assumed groundwater effects on ecosystem processes likely differ between large rivers and smaller tributary streams that were the focus of our study. 
+
+```{r include=FALSE}
+library(tidyverse)
+library(terra)
+library(sf)
+library(mapview)
+library(viridis)
+```
+
+```{r cache=FALSE}
+# lakes in Upper Snake
+lakes <- vect("data/UpperSnake_Lakes.shp") 
+
+# flowline
+flowline <- vect("data/UpperSnake_Flowline.shp")
+
+# Groundwater Index: 5km inverse distance weighted mean
+gwmet <- read_sf(dsn = "data", layer = "GroundwaterMetrics_Normalized_PredPoints") %>% mutate(SpringPrevalence = as.numeric(round(springpre0, digits = 3)))
+gwmet2 <- gwmet[,c("site", "basin_are0", "SpringPrevalence")]
+gwmet3 <- gwmet2[gwmet2$basin_are0 <= 500,] # drop large rivers
+
+# cut lakes from flowline
+flowline <- erase(flowline, lakes)
+
+# create map layers
+m2 <- mapview(flowline, color = "dodgerblue4", lwd = 2)
+m3 <- mapview(lakes, color = "dodgerblue4", lwd = 2, col.regions = "lightblue", alpha.regions = 1)
+m4 <- mapview(gwmet3, zcol = "SpringPrevalence", lwd = 0.75, col.regions = colorRampPalette(rev(magma(12))), alpha.regions = 1)
+
+# generate map
+m2 + m3 + m4
+```

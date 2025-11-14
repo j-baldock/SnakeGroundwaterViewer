@@ -5,5 +5,7 @@ library(knitr)
 quarto::quarto_render(output_format = "html")
 
 # render single chapters
-# quarto::quarto_render("index.qmd", output_format = "html")
-# quarto::quarto_render("exploredata.qmd", output_format = "html", cache_refresh = TRUE)
+quarto::quarto_render("index.qmd", output_format = "html")
+quarto::quarto_render("methods-results.qmd", output_format = "html")
+quarto::quarto_render("springprevalence.qmd", output_format = "html")
+quarto::quarto_render("groundwaterindex.qmd", output_format = "html")

@@ -58,5 +58,25 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methods and Results</span>"
     ]
+  },
+  {
+    "objectID": "springprevalence.html",
+    "href": "springprevalence.html",
+    "title": "3  View Spring Prevalence",
+    "section": "",
+    "text": "This page displays the spring prevalence for the entire upper Snake River watershed, calculated every 300 meters along the stream network. The value at each point is the probability that a groundwater spring exists at that location (more specifically, within the associated 10x10 meter raster cell). These data are used to derive the groundwater index (see next page), which is what we present in the paper. While outside the scope of the current study, individual springs are often the focus of water quality protection efforts and springs can also create patches of cold-water habitat that fish and other organisms use as thermal refuge during warm periods. Thus, these data capture finer-scale heterogeneity in groundwater availability than is captured by the groundwater index, which tends to average over localized hotspots of spring prevalence.\nKey: lighter (orange) points indicate locations with low groundwater availability, whereas darker (black) points indicate locations with high groundwater availability.\nNote: We restricted prediction points to those with catchments less than 500 square kilometers as we assumed groundwater effects on ecosystem processes likely differ between large rivers and smaller tributary streams that were the focus of our study.\n\n\nCode\n# lakes in Upper Snake\nlakes &lt;- vect(\"data/UpperSnake_Lakes.shp\") \n\n# flowline\nflowline &lt;- vect(\"data/UpperSnake_Flowline.shp\")\n\n# Groundwater Index: 5km inverse distance weighted mean\ngwmet &lt;- read_sf(dsn = \"data\", layer = \"GroundwaterMetrics_Normalized_PredPoints\") %&gt;% mutate(SpringPrevalence = as.numeric(round(springpre0, digits = 3)))\ngwmet2 &lt;- gwmet[,c(\"site\", \"basin_are0\", \"SpringPrevalence\")]\ngwmet3 &lt;- gwmet2[gwmet2$basin_are0 &lt;= 500,] # drop large rivers\n\n# cut lakes from flowline\nflowline &lt;- erase(flowline, lakes)\n\n# create map layers\nm2 &lt;- mapview(flowline, color = \"dodgerblue4\", lwd = 2)\nm3 &lt;- mapview(lakes, color = \"dodgerblue4\", lwd = 2, col.regions = \"lightblue\", alpha.regions = 1)\nm4 &lt;- mapview(gwmet3, zcol = \"SpringPrevalence\", lwd = 0.75, col.regions = colorRampPalette(rev(magma(12))), alpha.regions = 1)\n\n# generate map\nm2 + m3 + m4",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>View Spring Prevalence</span>"
+    ]
+  },
+  {
+    "objectID": "groundwaterindex.html",
+    "href": "groundwaterindex.html",
+    "title": "4  View Groundwater Index",
+    "section": "",
+    "text": "This page displays the groundwater index for the entire upper Snake River watershed, calculated every 300 meters along the stream network. The value at each point is calculated as the inverse, distance weighted average of all points in the upstream catchment. We designed the index to reflect the overall effect of groundwater on stream conditions; the index can be interpreted as the relative contribution of groundwater to streamflow. Ongoing research in the Spread Creek catchment shows a strong positive relationship between the groundwater index and mean summer specific discharge, indicating that locations with high groundwater index values are associated with high summer streamflow relative to their catchment size.\nKey: lighter (yellow-green) points indicate locations with low groundwater availability, whereas darker (purple) points indicate locations with high groundwater availability.\nNote: We restricted prediction points to those with catchments less than 500 square kilometers as we assumed groundwater effects on ecosystem processes likely differ between large rivers and smaller tributary streams that were the focus of our study.\n\n\nCode\n# lakes in Upper Snake\nlakes &lt;- vect(\"data/UpperSnake_Lakes.shp\") \n\n# flowline\nflowline &lt;- vect(\"data/UpperSnake_Flowline.shp\")\n\n# Groundwater Index: 5km inverse distance weighted mean\ngwmet &lt;- read_sf(dsn = \"data\", layer = \"GroundwaterMetrics_Normalized_PredPoints\") %&gt;% mutate(GroundwaterIndex = as.numeric(round(springpr_1, digits = 3)))\ngwmet2 &lt;- gwmet[,c(\"site\", \"basin_are0\", \"GroundwaterIndex\")]\ngwmet3 &lt;- gwmet2[gwmet2$basin_are0 &lt;= 500,] # drop large rivers\n\n# cut lakes from flowline\nflowline &lt;- erase(flowline, lakes)\n\n# create map layers\nm2 &lt;- mapview(flowline, color = \"dodgerblue4\", lwd = 2)\nm3 &lt;- mapview(lakes, color = \"dodgerblue4\", lwd = 2, col.regions = \"lightblue\", alpha.regions = 1)\nm4 &lt;- mapview(gwmet3, zcol = \"GroundwaterIndex\", lwd = 0.75, col.regions = colorRampPalette(rev(viridis(12))), alpha.regions = 1)\n\n# generate map\nm2 + m3 + m4",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>View Groundwater Index</span>"
+    ]
   }
 ]

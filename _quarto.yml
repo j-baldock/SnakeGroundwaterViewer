@@ -19,6 +19,8 @@ book:
   chapters:
     - index.qmd
     - methods-results.qmd
+    - springprevalence.qmd
+    - groundwaterindex.qmd
 
 format:
   html:
