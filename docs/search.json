@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Groundwater Availability in the upper Snake River Watershed",
     "section": "",
-    "text": "1 Introduction\nThis book provides tools to visualize spatial data describing groundwater availability in rivers and streams of the upper Snake River watershed, Wyoming, USA. This book supports the publication “Groundwater structures fish growth and production across a riverscape”, published in Freshwater Biology.\nView the publication here:\nAccess the GitHub repo (and spatial data files) here: https://github.com/j-baldock/SnakeGroundwaterViewer\nProject team: Jeff Baldock, Robert Al-Chokhachy, Annika Walters",
+    "text": "1 Introduction\nThis book provides tools to visualize spatial data describing groundwater availability in rivers and streams of the upper Snake River watershed, Wyoming, USA. This book supports the publication “Groundwater structures fish growth and production across a riverscape”, published in Freshwater Biology.\nView the publication here: https://doi.org/10.1111/fwb.70112\nAccess the GitHub repo (and spatial data files) here: https://github.com/j-baldock/SnakeGroundwaterViewer\nProject team: Jeff Baldock, Robert Al-Chokhachy, Annika Walters\nFull citation: Baldock JR, Al-Chokhachy R, & Walters A. 2025. Groundwater structures fish growth and production across a riverscape. Freshwater Biology 70:e70112. DOI: 10.1111/fwb.70112",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
